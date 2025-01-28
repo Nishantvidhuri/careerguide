@@ -24,7 +24,6 @@ const ImageCarousel = () => {
 
   const [currentImages, setCurrentImages] = useState(images);
   const [isSliding, setIsSliding] = useState(false);
-  const isLargeScreen = window.innerWidth >= 1024;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,12 +45,14 @@ const ImageCarousel = () => {
   };
 
   return (
-    <div className="overflow-hidden w-[full ml-[00px] py-8 flex justify-center bg-gray-100">
+    <div className="overflow-hidden w-full py-8 flex justify-center ">
       {/* Carousel Wrapper */}
       <div
-        className={`flex gap-6 ${isSliding ? "transition-transform duration-500 ease-in-out" : ""}`}
+        className={`flex gap-6 items-center ${
+          isSliding ? "transition-transform duration-500 ease-in-out" : ""
+        }`}
         style={{
-          transform: isSliding ? `translateX(${isLargeScreen ? "-21.2%" : "-55%"})` : "translateX(0)",
+          transform: isSliding ? "translateX(-20%)" : "translateX(0)",
         }}
       >
         {currentImages.map((image, index) => (
@@ -59,7 +60,7 @@ const ImageCarousel = () => {
             key={index}
             src={image}
             alt={`brand-${index}`}
-            className="h-16 object-contain grayscale"
+            className="h-14 sm:h-16 md:h-20 lg:h-24 object-contain grayscale mx-2"
           />
         ))}
       </div>
