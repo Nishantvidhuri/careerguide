@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="overflow-x-hidden">
       <Navbar />
-      <div className="w-2/3 ml-auto mr-32 flex flex-col md:flex-row items-center justify-between mt-10">
+      <div className="w-2/3 ml-auto mr-32 flex flex-col md:flex-row items-center justify-between mt-20">
         {/* Image Section */}
         <div className="md:order-2">
           <img 
